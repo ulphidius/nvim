@@ -158,10 +158,25 @@ dap.adapters.codelldb = {
   executable = {
     -- CHANGE THIS to your path!
     command = vim.fn.stdpath("data") .. '/mason/bin/codelldb',
-    args = {"--port", "${port}"},
+    args = {"--port", "${port}", "--params", '{"showDisassembly" : "never"}'},
 
     -- On windows you may have to uncomment this:
     -- detached = false,
-  }
+  },
+}
+
+dap.configurations.rust = {
+  {
+    name = "Rust debug",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+	  vim.fn.jobstart('cargo build')
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = true,
+	runInTerminal = false,
+	},
 }
 
