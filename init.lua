@@ -1,1 +1,2 @@
-require("ulphidius")
+require("ulphidius.core")
+require("ulphidius.lazy")
