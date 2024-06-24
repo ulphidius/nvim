@@ -39,8 +39,10 @@ opt.scrolloff = 10 -- Remain line limit before starting to scroll
 -- Backspace
 opt.backspace = "indent,eol,start" -- Allow backspace on indent, end of line or insert mode start position
 
+-- if vim.fn.executable("tmux") == 0 then
 -- Clipboard
 opt.clipboard:append("unnamedplus") -- Use the system clipboard
+-- end
 
 -- Split windows
 opt.splitright = true -- Vertical split go to the right side of the screen
