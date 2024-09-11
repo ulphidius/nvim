@@ -37,7 +37,6 @@ return {
 				"graphql",
 				"pyright",
 				"gopls",
-				"rust_analyzer",
 			},
 		})
 
