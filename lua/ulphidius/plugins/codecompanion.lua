@@ -33,5 +33,9 @@ return {
 				end,
 			},
 		})
+		
+		local keymap = vim.keymap
+
+		keymap.set("n", "<leader>cc", "<cmd>CodeCompanionChat<CR>", { desc = "Comment current cursor line" })
 	end,
 }
