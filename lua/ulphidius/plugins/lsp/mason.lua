@@ -1,7 +1,7 @@
 return {
-	"williamboman/mason.nvim",
+	"mason-org/mason.nvim",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"jay-babu/mason-nvim-dap.nvim",
 	},
@@ -23,6 +23,10 @@ return {
 					package_uninstalled = "✗",
 				},
 			},
+		})
+
+		mason_lspconfig.setup({
+			automatic_enable = true,
 		})
 
 		mason_lspconfig.setup({
