@@ -120,6 +120,25 @@ return {
 			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
 		})
 
+		-- Rust conf
+		vim.lsp.config("rust_analyzer", {
+			-- Other Configs ...
+			settings = {
+				["rust-analyzer"] = {
+					-- Other Settings ...
+					procMacro = {
+						ignored = {
+							leptos_macro = {
+								-- optional: --
+								"component",
+								"server",
+							},
+						},
+					},
+				},
+			},
+		})
+
 		-- TODO: Break by upgrading Mason to V2.0.0
 		-- mason_lspconfig.setup_handlers({
 		-- 	-- default handler for installed servers
